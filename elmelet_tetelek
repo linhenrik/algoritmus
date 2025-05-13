@@ -1,0 +1,106 @@
+------------------------------------------------------------------------------------
+
+Összegzés tétele
+
+Definíció: Adott egy N>0 elemű számsorozat, és ki kell számolni az elemek összegét.
+Algoritmus:
+Összeg:=0
+Ciklus i := 1-től N-ig
+    Összeg :=Összeg+A[i]
+Ciklus vége.
+
+-------------------------------------------------------------------------------------
+
+ Eldöntés tétele 
+
+Definíció: Adott egy N>0 elemű sorozat, és egy a sorozat tagjain értelmezett T tulajdonság. 
+El kell dönteni, hogy van-e a sorozatban legalább egy T tulajdonságú elem.
+Algoritmus:
+i:=1
+Ciklus amíg i<:=N és A[i] nem Ttulajdonságú
+    i:=i+1
+Ciklus vége
+Ha( i<=N)  akkor Eredmény := ’ VAN T tul elem’
+
+--------------------------------------------------------------------------------------
+
+ Kiválasztás tétele
+
+Definíció: Adott egy N>0 elemű sorozat, és egy a sorozat tagjain értelmezett T tulajdonság.
+Tudjuk, hogy a sorozatban van T tulajdonságú elem, és meg kell adni ezen elem sorszámát.
+Algoritmus:
+i:=1
+Ciklus amíg A[i] nem T tulajdonságú
+    i:=i+1
+Ciklus vége.
+Sorsz:=i
+
+---------------------------------------------------------------------------------------
+ <<[Keresés tételei]>>
+ ---------------------------------------------------------------------------------------
+
+Lineáris keresés 
+
+Definíció: Adott egy N>0 elemű sorozat, és egy a sorozat tagjain értelmezett T tulajdonság.
+El kell dönteni, hogy van-e T tulajdonságú elem a sorozatban, és ha van, akkor hányadik. 
+Algoritmus:
+i:=1
+Ciklus amíg i<=N és A[i] nem Ttul.
+    i:=i+1
+Ciklus vége
+Ha(i<=N) akkor Sorsz:=i
+
+-----------------------------------------------------------------------------------------
+
+ Logaritmikus keresés 
+
+Definíció: Adott egy N>0 elemű RENDEZETT sorozat és egy keresett elem (Z). El kell dönteni, hogy van-e Z elem a sorozatban, és ha van, hányadik.    
+Algoritmus:
+AH:=1 : FH:=N  //a sorozat alsó határa-AH  felső határa-FH
+Ciklus
+    i:= EGÉSZRÉSZ((AH+FH)/2)
+    Ha(A[i]<Z) akkor  AH:=i+1
+    Ha(A[i]>Z) akkor FH:=i-1
+amíg   AH<=FH és A[i] <>Z ciklus vége.
+Ha(AH<=FH) akkor  SORSZ:=i
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+ Megszámlálás tétele
+
+Definíció: Adott egy N>0 elemű sorozat, és egy a sorozat tagjain értelmezett T tulajdonság.
+Meg kell számolni a T tulajdonságú elemeket. 
+Algoritmus:
+DB:=0
+Ciklus i :=1-től N-ig
+    Ha(A[i] Ttulajdonságú ) akkor DB:=DB+1
+Ciklus vége.
+
+----------------------------------------------------------------------------------------
+
+ Kiválogatás tétele
+
+Definíció: Adott egy N>0 elemű sorozat, és egy a sorozat tagjain értelmezett T tulajdonság.
+Ki kell válogatni a T tulajdonságú elemek sorszámait egy külön B[] vektorba.   
+Algoritmus:
+db:=0
+Ciklus i := 1-től N-ig
+    Ha(A[i] T tul.) akkor  db:=db+1
+                        B[db]:=i
+    Elágazás vége.
+Ciklus vége.
+
+----------------------------------------------------------------------------------------
+
+ Maximum/Minimum kiválasztás tétele
+
+Definíció: Adott egy N>0 elemű sorozat, és meg kell keresni a sorozat valamilyen szempontból legnagyobb/legkisebb elemét.
+Algoritmus:
+SORSZAM:=1
+Ciklus i :=2- től N –ig
+    Ha( A[SORSZAM]<A[i] ) akkor SORSZAM:=i
+Ciklus vége.
+MAX:= SORSZAM
+
+-----------------------------------------------------------------------------------------
