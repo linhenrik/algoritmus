@@ -26,7 +26,8 @@ namespace MyApp
                 }
             }
             System.Console.WriteLine("Rendezett tömb:");
-            foreach (int szam in tomb) {
+            foreach (int szam in tomb)
+            {
                 System.Console.WriteLine(szam);
             }
         }
